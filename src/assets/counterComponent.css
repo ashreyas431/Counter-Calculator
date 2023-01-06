@@ -1,0 +1,28 @@
+.counterClass {
+  display: inline-block;
+  background-color: aliceblue;
+  text-decoration: bold;
+  color: #00614c;
+  border-radius: 5rem;
+  width: 20%;
+  text-align: center;
+  align-items: center;
+  padding: 5px 10px 5px 10px;
+}
+
+.decrementButton {
+  display: inline-block;
+  margin: 10px 5px 10px 5px;
+}
+.autoDecrementButton {
+  display: inline-block;
+  margin: 10px 5px 10px 5px;
+}
+.autoIncrementButton {
+  display: inline-block;
+  margin: 10px 5px 10px 5px;
+}
+.incrementButton {
+  display: inline-block;
+  margin: 10px 5px 10px 5px;
+}
