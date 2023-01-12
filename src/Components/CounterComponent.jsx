@@ -3,28 +3,39 @@ import "../assets/counterComponent.css";
 
 function CounterComponent() {
   const [counter, setCounter] = useState(0);
+  const [intervalId, setIntervalId] = useState();
+
+  const stopInterval = () => {
+    clearInterval(intervalId);
+    setIntervalId();
+  };
 
   const handleDecrement = () => {
     setCounter((prev) => prev - 1);
   };
-  const handleAutoDecrement = () => {
-    const interval = setInterval(() => {
-      setCounter((prev) => prev - 1);
-    }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
+  const handleAutoDecrement = () => {
+    stopInterval();
+    if (!intervalId) {
+      setIntervalId(
+        setInterval(() => {
+          setCounter((prev) => prev - 1);
+        }, 1000)
+      );
+      console.log("interca", intervalId);
+    }
   };
 
   const handleAutoIncrement = () => {
-    const interval = setInterval(() => {
-      setCounter((prev) => prev + 1);
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
+    stopInterval();
+    if (!intervalId) {
+      setIntervalId(
+        setInterval(() => {
+          setCounter((prev) => prev + 1);
+        }, 1000)
+      );
+      console.log("interca", intervalId);
+    }
   };
   const handleIncrement = () => {
     setCounter((prev) => prev + 1);
